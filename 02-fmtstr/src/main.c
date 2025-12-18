@@ -11,6 +11,8 @@ void fail(void){
 
 int main(void) {
 
+	int changeme = 0;
+	char input [40] = {0};
 	puts(
 		"02-fmtstr this challenge is similar to 01-stack, "
 		"the vulnerability is exactly the same but this time "
@@ -20,20 +22,21 @@ int main(void) {
 		"is 40 bytes long but this will only read 20 bytes."
 	);
 
-	char input [40] = {0};
-	int changeme = 0;
+    printf("address of changeme: %p\n", &changeme);
 
 	printf("input > ");
-	fgets(input, 20, stdin);
+
+	gets(input);
+
+	printf("changeme: %d\n", changeme);
+	printf("input: ");
+    printf(input);
 
 	if (changeme != 0) {
 		win();
 	} else {
 		fail();
 	}
-
-	printf("changeme: %d\n", changeme);
-	printf("input: %s\n", input);
 
 	return 0;
 }

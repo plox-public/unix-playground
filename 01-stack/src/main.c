@@ -2,7 +2,7 @@
 #include <unistd.h>
 
 void win(void){
-	printf("\nsuccess!\n");
+	printf("\nCTF_FLAG{example_flag}\n");
 };
 
 void fail(void){

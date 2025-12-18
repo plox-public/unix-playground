@@ -9,6 +9,6 @@ $(OUT): src/main.c
 .PHONY: clean test
 
 clean:
-	rm -f $(OUT)
+	rm -rf ./build
 test:
-	$(OUT)
+	python3 ./test/test_exploit.py

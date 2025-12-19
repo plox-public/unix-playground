@@ -1,5 +1,6 @@
-FLAGS=-Wall -ansi -Wno-stringop-overflow -fno-stack-protector \
+PROTDISABLE=-Wno-stringop-overflow -fno-stack-protector \
 	-Wno-deprecated-declarations -Wno-format-security
+FLAGS=-Wall -ansi -g -O0 $(PROTDISABLE)
 
 .PHONY: clean test
 build/a.out: src/main.c

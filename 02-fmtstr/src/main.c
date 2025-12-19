@@ -22,7 +22,7 @@ int vuln(void) {
         "However this one will not read in more bytes then the buffer allows.\n"
         "This requires a format string exploit to write some bytes on the stack.\n";
 
-	puts(msg);
+    puts(msg);
 
     printf("------STACK ADDR------\n");
     printf("address of _A: %p\n", &_A);
@@ -41,10 +41,24 @@ int vuln(void) {
     printf("----------------------\n");
 
 	printf("input > ");
-
-    // TODO - create a limit on this buffer with fgets
 	gets(input);
     printf(input);
+
+    printf("------STACK ADDR------\n");
+    printf("address of _A: %p\n", &_A);
+    printf("address of _B: %p\n", &_B);
+    printf("address of changeme: %p\n", &changeme);
+    printf("address of _C: %p\n", &_C);
+    printf("address of _D: %p\n", &_D);
+    printf("----------------------\n");
+
+    printf("------STACK VALS------\n");
+    printf("address of _A: %08x\n", _A);
+    printf("address of _B: %08x\n", _B);
+    printf("address of changeme: %08x\n", changeme);
+    printf("address of _C: %08x\n", _C);
+    printf("address of _D: %08x\n", _D);
+    printf("----------------------\n");
 
 	if (changeme != 0xdeadbeef) {
 		win();

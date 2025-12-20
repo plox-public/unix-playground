@@ -10,3 +10,4 @@ test: build/a.out
 	python3 ./test/test_exploit.py
 clean: 
 	rm -rf ./build
+	find . -type f -name "*.gdb_history" -delete

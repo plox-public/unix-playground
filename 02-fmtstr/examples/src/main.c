@@ -10,12 +10,24 @@ int main(void){
 	printf("AAAAAAAAAA%n\n", &changeme);
 	printf("changeme = %x\n", changeme);
 	printf("changeme = %d\n", changeme);
-	/* ./build/a.out
+
+	/* -- program output --
 	 * AAAAAAAAAA
 	 * changeme = a
 	 * changeme = 10
 	 */
 
-	printf("test: %8d\n", 4);
+    int printcount = 0;
+	printf("writing bytes: %1322d%n\n", 4, &printcount);
+    printf("printcount = %d\n", printcount);
+
+    /* == program out --
+     * .................
+     * ......spaces.....
+     * .................
+     * ...........4\n
+     * printcount = 1337
+     */
+
 	return 0;
 }
